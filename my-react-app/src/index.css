@@ -1,113 +1,65 @@
 body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #6B73FF, #000DFF);
+  margin: 0;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0;
+  background: radial-gradient(circle, #1b1b1b, #000000);
+  font-family: 'Poppins', sans-serif;
 }
 
-.to-do-list {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  padding: 30px;
-  width: 400px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
-  color: white;
+.clock-container {
+  background: rgba(17, 17, 17, 0.8);
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 255, 255, 0.5), 0 0 60px rgba(0, 255, 255, 0.3);
+  transform: rotateX(25deg);
+  animation: float 5s infinite ease-in-out, pulse 2s infinite;
+  position: relative;
+}
+
+@keyframes float {
+  0%, 100% {
+      transform: translateY(0) rotateX(25deg);
+  }
+  50% {
+      transform: translateY(-20px) rotateX(25deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.5), 0 0 30px rgba(0, 255, 255, 0.3);
+  }
+  50% {
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.7), 0 0 60px rgba(0, 255, 255, 0.5);
+  }
+  100% {
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.5), 0 0 30px rgba(0, 255, 255, 0.3);
+  }
+}
+
+.clock {
+  color: #00FFFF;
+  font-size: 4.5em;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 0 0 30px rgba(0, 255, 255, 0.5);
   text-align: center;
+  position: relative;
 }
 
-.to-do-list h1 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+.clock:hover {
+  transform: scale(1.1);
+  text-shadow: 0 0 30px rgba(0, 255, 255, 1), 0 0 60px rgba(0, 255, 255, 0.8);
 }
 
-.to-do-list input[type="text"] {
-  width: 80%;
-  padding: 12px 15px;
-  margin-bottom: 20px;
-  border: none;
-  border-radius: 25px;
-  outline: none;
-  font-size: 1em;
-  color: #333;
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.add-button {
-  background: #ff7f50;
-  border: none;
-  padding: 12px 25px;
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 1em;
-  color: white;
-  text-transform: uppercase;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  transition: background 0.3s ease, transform 0.2s ease;
-  margin-top: -10px;
-}
-
-.add-button:hover {
-  background: #ff6347;
-  transform: scale(1.05);
-}
-
-ol {
-  list-style-type: none;
-  padding: 0;
-  margin-top: 30px;
-}
-
-li {
-  background: rgba(255, 255, 255, 0.2);
-  padding: 15px;
-  margin: 10px 0;
-  border-radius: 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: background 0.3s ease;
-}
-
-li:hover {
-  background: rgba(255, 255, 255, 0.3);
-}
-
-.text {
-  font-size: 1.2em;
-  flex-grow: 1;
-  margin-right: 15px;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-.del-button,
-.move-button {
-  background: #ff6347;
-  border: none;
-  padding: 8px 15px;
-  border-radius: 50px;
-  cursor: pointer;
-  color: white;
-  font-size: 0.9em;
-  margin-left: 5px;
-  transition: background 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.del-button:hover,
-.move-button:hover {
-  background: #ff4500;
-  transform: scale(1.05);
-}
-
-.del-button:active,
-.move-button:active {
-  transform: scale(0.95);
+@media (max-width: 768px) {
+  .clock-container {
+      padding: 30px;
+  }
+  
+  .clock {
+      font-size: 3em;
+  }
 }
