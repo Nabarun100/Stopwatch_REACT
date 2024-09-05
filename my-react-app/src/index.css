@@ -4,62 +4,82 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(circle, #1b1b1b, #000000);
+  background: linear-gradient(135deg, #1b1b1b, #6a55b7);
   font-family: 'Poppins', sans-serif;
+  color: #fff;
 }
 
-.clock-container {
-  background: rgba(17, 17, 17, 0.8);
-  padding: 50px;
+.stopwatch {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 40px;
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 255, 255, 0.5), 0 0 60px rgba(0, 255, 255, 0.3);
-  transform: rotateX(25deg);
-  animation: float 5s infinite ease-in-out, pulse 2s infinite;
-  position: relative;
-}
-
-@keyframes float {
-  0%, 100% {
-      transform: translateY(0) rotateX(25deg);
-  }
-  50% {
-      transform: translateY(-20px) rotateX(25deg);
-  }
-}
-
-@keyframes pulse {
-  0% {
-      box-shadow: 0 0 15px rgba(0, 255, 255, 0.5), 0 0 30px rgba(0, 255, 255, 0.3);
-  }
-  50% {
-      box-shadow: 0 0 30px rgba(0, 255, 255, 0.7), 0 0 60px rgba(0, 255, 255, 0.5);
-  }
-  100% {
-      box-shadow: 0 0 15px rgba(0, 255, 255, 0.5), 0 0 30px rgba(0, 255, 255, 0.3);
-  }
-}
-
-.clock {
-  color: #00FFFF;
-  font-size: 4.5em;
-  font-weight: bold;
-  letter-spacing: 3px;
-  text-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 0 0 30px rgba(0, 255, 255, 0.5);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   text-align: center;
-  position: relative;
 }
 
-.clock:hover {
-  transform: scale(1.1);
-  text-shadow: 0 0 30px rgba(0, 255, 255, 1), 0 0 60px rgba(0, 255, 255, 0.8);
+.display {
+  font-size: 4em;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  color: #00ff99;
+  text-shadow: 0 0 10px rgba(0, 255, 153, 0.7), 0 0 20px rgba(0, 255, 153, 0.5);
+}
+
+.controls {
+  display: flex;
+  justify-content: space-around;
+}
+
+.controls button {
+  padding: 10px 20px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.start-button {
+  background-color: #00ff99;
+  color: #000;
+  box-shadow: 0 4px 15px rgba(0, 255, 153, 0.3);
+}
+
+.start-button:hover {
+  background-color: #00cc77;
+  transform: scale(1.05);
+}
+
+.stop-button {
+  background-color: #ff4d4d;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(255, 77, 77, 0.3);
+}
+
+.stop-button:hover {
+  background-color: #cc0000;
+  transform: scale(1.05);
+}
+
+.reset-button {
+  background-color: #008CBA;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 140, 186, 0.3);
+}
+
+.reset-button:hover {
+  background-color: #005f7f;
+  transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
-  .clock-container {
-      padding: 30px;
-  }
-  
-  .clock {
+  .display {
       font-size: 3em;
+  }
+
+  .controls button {
+      padding: 8px 15px;
+      font-size: 1em;
   }
 }
