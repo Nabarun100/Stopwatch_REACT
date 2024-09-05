@@ -1,0 +1,113 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #6B73FF, #000DFF);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.to-do-list {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 30px;
+  width: 400px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  color: white;
+  text-align: center;
+}
+
+.to-do-list h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.to-do-list input[type="text"] {
+  width: 80%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 25px;
+  outline: none;
+  font-size: 1em;
+  color: #333;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.add-button {
+  background: #ff7f50;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1em;
+  color: white;
+  text-transform: uppercase;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin-top: -10px;
+}
+
+.add-button:hover {
+  background: #ff6347;
+  transform: scale(1.05);
+}
+
+ol {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 30px;
+}
+
+li {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+li:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.text {
+  font-size: 1.2em;
+  flex-grow: 1;
+  margin-right: 15px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.del-button,
+.move-button {
+  background: #ff6347;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 50px;
+  cursor: pointer;
+  color: white;
+  font-size: 0.9em;
+  margin-left: 5px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.del-button:hover,
+.move-button:hover {
+  background: #ff4500;
+  transform: scale(1.05);
+}
+
+.del-button:active,
+.move-button:active {
+  transform: scale(0.95);
+}
